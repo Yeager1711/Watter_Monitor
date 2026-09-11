@@ -1,883 +1,1102 @@
-.main {
+.page {
   min-height: 100vh;
-  padding: 2rem 2%;
-  margin: 8.3rem auto 2rem;
-  background: #fff;
+  padding: 24px 0 40px;
+  background: #f5f7fa;
+  color: #102a43;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 
-  @media (max-width: 1024px) {
-    padding: 1.5rem 4%;
-    margin: 7rem auto 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    padding: 1rem 3%;
-    margin: 6rem auto 1rem;
-  }
-
-  @media (max-width: 480px) {
-    padding: 1rem 2%;
-    margin: 6rem auto 1rem;
-  }
-
-  .wrapper_main {
-    max-width: 120rem;
+  .container {
+    max-width: 80rem;
+    width: 95%;
     margin: 0 auto;
-    padding: 2rem;
-    border-radius: 1.5rem;
-    position: relative;
-
-    @media (max-width: 1024px) {
-      padding: 2rem;
-    }
-
-    @media (max-width: 768px) {
-      padding: 1.5rem;
-    }
-
-    @media (max-width: 480px) {
-      padding: 1rem;
-    }
-
-    .control_right {
-      position: fixed;
-      right: 6%;
-      bottom: 10%;
-      width: 5rem;
-      height: 12rem;
-      border-radius: 5rem;
-      background: linear-gradient(135deg,
-          #fce1e4 0%,
-          /* Hồng nhạt */
-          #e3d0ff 35%,
-          /* Tím pastel */
-          #c0e6f9 70%,
-          /* Xanh pastel */
-          #fdecc8 100%
-          /* Cam nhạt */
-        );
-
-      backdrop-filter: blur(.5rem);
-      z-index: 999;
-
-      .wrapper_center {
-        padding: .5rem;
-      }
-    }
 
     .header {
-      padding: 2rem 0;
-      text-align: center;
-      border-radius: 1rem;
-      position: relative;
-
-      .header_title {
-        font-size: 2.3rem;
-        font-weight: 700;
-        color: rgba(45, 45, 45, 0.9);
-        margin-bottom: 1.5rem;
-        letter-spacing: -0.02em;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      }
-
-      .wrapper_expend {
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 1rem;
-        padding: 1rem;
-
-        .search_bar {
-          display: inline-flex;
-          align-items: center;
-          background: rgba(255, 255, 255, 0.9);
-          border: 1px solid rgba(224, 224, 224, 0.4);
-          border-radius: 2rem;
-          padding: 0;
-          margin: 0 auto 1rem;
-          max-width: 80rem;
-          width: 90%;
-          transition: all 0.3s ease;
-
-          &.search_bar_expanded {
-            padding: 1.5rem;
-          }
-
-          &:hover {
-            border-color: rgba(136, 136, 232, 0.5);
-            box-shadow: 0 2px 8px rgba(136, 136, 232, 0.1);
-          }
-
-          .search_input {
-            flex: 1 1;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            color: rgba(51, 51, 51, 0.9);
-            padding: 1rem 1.5rem 1rem 1rem;
-            background: transparent;
-            width: 100%;
-
-            &::placeholder {
-              color: rgba(153, 153, 153, 0.7);
-              font-size: 1.2rem;
-            }
-          }
-
-          .search_icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 4.2rem;
-            height: 4.2rem;
-            background: linear-gradient(135deg, rgba(136, 136, 232, 0.9), rgba(119, 119, 215, 0.9));
-            color: rgba(255, 255, 255, 0.95);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.6rem;
-
-            &:hover {
-              background: linear-gradient(135deg, rgba(119, 119, 215, 1), rgba(102, 102, 198, 1));
-              box-shadow: 0 2px 8px rgba(136, 136, 232, 0.3);
-            }
-          }
-
-          .clear_icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 4.2rem;
-            height: 4.2rem;
-            color: rgba(153, 153, 153, 0.9);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.6rem;
-
-            &:hover {
-              color: rgba(136, 136, 232, 0.9);
-            }
-          }
-        }
-
-        .categories {
-          display: flex;
-          justify-content: center;
-          gap: 1rem;
-          flex-wrap: wrap;
-          padding: 0.5rem;
-
-          .category_button {
-            padding: 0.6rem 1.6rem;
-            border: 1px solid rgba(224, 224, 224, 0.5);
-            border-radius: 2rem;
-            background: rgba(255, 255, 255, 0.8);
-            color: rgba(85, 85, 85, 0.9);
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-
-            &:hover {
-              background: linear-gradient(135deg, rgba(136, 136, 232, 0.2), rgba(230, 230, 255, 0.3));
-              color: rgba(51, 51, 51, 0.9);
-              border-color: rgba(136, 136, 232, 0.5);
-              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            &.active {
-              background: linear-gradient(135deg, rgba(136, 136, 232, 0.9), rgba(119, 119, 215, 0.9));
-              color: rgba(255, 255, 255, 0.95);
-              border-color: rgba(136, 136, 232, 0.9);
-            }
-          }
-
-          .category_button_skeleton {
-            padding: 0.6rem 1.6rem;
-            border: 1px solid rgba(224, 224, 224, 0.5);
-            border-radius: 2rem;
-            width: 100px;
-            height: 2.2rem;
-            background: linear-gradient(90deg,
-                rgba(136, 136, 232, 0.1),
-                rgba(200, 200, 200, 0.2),
-                rgba(136, 136, 232, 0.1));
-            background-size: 200% 100%;
-            animation: skeleton-loading 1.5s ease-in-out infinite;
-          }
-
-          .no_categories {
-            font-size: 1rem;
-            color: rgba(153, 153, 153, 0.8);
-            padding: 1rem;
-            text-align: center;
-            width: 100%;
-          }
-        }
-      }
-    }
-
-    .heading {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: rgba(45, 45, 45, 0.9);
-      margin: 0 0 2rem 0;
-      letter-spacing: -0.01em;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-    }
-
-    .heading_skeleton {
-      margin: 2rem 0;
-      padding: 0.5rem 1rem;
-      border-radius: 0.5rem;
-
-      .heading_skeleton_text {
-        width: 200px;
-        height: 2.2rem;
-        background: linear-gradient(90deg,
-            rgba(136, 136, 232, 0.1),
-            rgba(200, 200, 200, 0.2),
-            rgba(136, 136, 232, 0.1));
-        background-size: 200% 100%;
-        animation: skeleton-loading 1.5s ease-in-out infinite;
-        border-radius: 4px;
-      }
-    }
-
-    .statsSection {
-      text-align: center;
-      padding: 1rem 0;
-
-      .statsTitle {
-        font-size: 3.5rem;
-        font-weight: bold;
-        margin-bottom: 1.5rem;
-        max-width: 69rem;
-        margin: auto;
-      }
-
-      .statsDescription {
-        font-size: 1.8rem;
-        color: #666;
-        max-width: 69rem;
-        margin: 2rem auto 4rem auto;
-        line-height: 1.5;
-      }
-
-      .statsGrid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        margin: 0 auto 3rem;
-        max-width: 1200px;
-        width: 100%;
-        text-align: center;
-
-        .statItem {
-          text-align: center;
-
-          .statNumber {
-            font-size: 3.5rem;
-            font-weight: bold;
-            color: #000;
-          }
-
-          .statLabel {
-            display: block;
-            font-size: 1.3rem;
-            color: #666;
-            padding: 0.5rem 0;
-          }
-        }
-      }
-
-      .createButton {
-        display: inline-block;
-        background: #6366f1;
-        padding: 1rem 3.5rem;
-        font-size: 1.3rem;
-        color: #fff;
-        text-transform: capitalize;
-        border-radius: 1rem;
-
-        svg {
-          margin-left: 0.5rem;
-        }
-
-        &:hover {
-          transition: 0.3s linear;
-          transform: scale(0.9);
-        }
-      }
-    }
-
-    @media (max-width: 599px) {
-      .statsSection {
-        .statsTitle {
-          font-size: 3rem;
-        }
-
-        .statsDescription {
-          font-size: 1.25rem;
-        }
-
-        .statsGrid {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 1rem;
-
-          .statItem {
-            .statNumber {
-              font-size: 2.2rem;
-            }
-
-            .statLabel {
-              font-size: 0.8rem;
-            }
-          }
-        }
-
-        .createButton {
-          font-size: 1rem;
-          padding: 0.6rem 1.5rem;
-        }
-      }
-    }
-
-    .animateLayer {
-      border: 0.1rem solid #91e2f9;
-      border-radius: 1rem;
-      padding: 1rem 1.5rem;
-      transform: scale(1.1);
-      background: #fff;
-      transition: all 0.3s linear;
-    }
-
-    .layer_default {
-      margin-top: 2rem;
-      transition: all 0.3s linear;
-
-      .category_section {
-        margin-bottom: 3rem;
-      }
-
-      .section_title {
-        font-size: 1.8rem;
-        font-weight: 600;
-        color: rgba(45, 45, 45, 0.9);
-        margin-bottom: 1.5rem;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-      }
-
-      .section_title_skeleton {
-        width: 200px;
-        height: 2rem;
-        background: linear-gradient(90deg,
-            rgba(136, 136, 232, 0.1),
-            rgba(200, 200, 200, 0.2),
-            rgba(136, 136, 232, 0.1));
-        background-size: 200% 100%;
-        animation: skeleton-loading 1.5s ease-in-out infinite;
-        border-radius: 4px;
-        margin-bottom: 1.5rem;
-        padding: 0.5rem 1rem;
-      }
-
-      .no_results {
-        text-align: center;
-        font-size: 1.2rem;
-        color: rgba(153, 153, 153, 0.8);
-        padding: 2rem;
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 1rem;
-      }
-
-      .product_list {
-        width: 100%;
-
-        .swiper_container {
-          padding: 2rem 1.5rem 4rem 0.5rem;
-          width: 100%;
-
-          @media (max-width: 768px) {
-            padding: 1rem 1rem 1rem 0.5rem;
-          }
-
-          @media (max-width: 480px) {
-            padding: 1rem 1rem 1rem 0.5rem;
-          }
-
-          .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: auto;
-          }
-
-          .swiper-pagination {
-            bottom: 1rem;
-          }
-
-          .swiper-pagination-bullet {
-            background: #6b7280;
-            opacity: 0.5;
-            width: 0.8rem;
-            height: 0.8rem;
-          }
-
-          .swiper-pagination-bullet-active {
-            background: #3b82f6;
-            opacity: 1;
-          }
-        }
-
-        .card_product {
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(245, 245, 255, 0.9));
-          border-radius: 3rem;
-          overflow: hidden;
-          cursor: pointer;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          position: relative;
-          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.03);
-          max-width: 100%;
-
-          &:hover {
-            box-shadow: 0 8px 24px rgba(136, 136, 232, 0.2);
-            transform: scale(1.02);
-          }
-
-          .image_products {
-            width: 100%;
-            height: 53rem;
-            background: #fff;
-            overflow: hidden;
-
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: top center;
-              transform: scale(1.12);
-              transition: transform 0.3s ease;
-            }
-
-            .card_overlay {
-              position: absolute;
-              bottom: 4%;
-              right: 4%;
-              left: 4%;
-              background: #fff;
-              border-radius: 2rem;
-              padding: 1.5rem;
-              border: .1rem solid #dbdbdb;
-
-              .card_title {
-                font-size: 1.5rem;
-                margin: 0;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-              }
-
-              .card_price {
-                font-size: 1.4rem;
-                color: #618df9;
-                font-weight: 600;
-              }
-
-              .card_status {
-                margin: 0;
-                color: #888;
-                font-weight: 400;
-              }
-            }
-
-            &:hover .card_overlay {
-              opacity: 1;
-            }
-          }
-        }
-
-        .card_product_skeleton {
-          background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(245, 245, 255, 0.9));
-          border-radius: 1rem;
-          overflow: hidden;
-          border: 1px solid rgba(232, 232, 240, 0.5);
-          height: 20rem;
-          width: 32rem;
-          max-width: 100%;
-
-          .image_products_skeleton {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg,
-                rgba(136, 136, 232, 0.1),
-                rgba(200, 200, 200, 0.2),
-                rgba(136, 136, 232, 0.1));
-            background-size: 200% 100%;
-            animation: skeleton-loading 1.5s ease-in-out infinite;
-          }
-        }
-
-        @media (max-width: 1024px) {
-          .card_product {
-            .image_products {}
-
-            .card_overlay {
-              .card_title {
-                font-size: 1.5rem;
-              }
-
-              .card_price {
-                font-size: 1.3rem;
-              }
-
-              .card_status {
-                font-size: 1.3rem;
-              }
-            }
-          }
-
-          .card_product_skeleton {
-            width: 18rem;
-          }
-        }
-
-        @media (max-width: 768px) {
-          .card_product {
-            .image_products {
-              height: 40rem;
-            }
-
-            .card_overlay {
-              .card_title {
-                font-size: 1.5rem;
-              }
-
-              .card_price {
-                font-size: 1.3rem;
-              }
-
-              .card_status {
-                font-size: 1.3rem;
-              }
-            }
-          }
-
-          .card_product_skeleton {
-            width: 18rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .card_product {
-            .image_products {
-              height: 35rem !important;
-            }
-
-            .card_overlay {
-              .card_title {
-                font-size: 1.3rem;
-              }
-
-              .card_price {
-                font-size: 1.1rem;
-              }
-
-              .card_status {
-                font-size: 1.1rem;
-              }
-            }
-          }
-
-          .card_product_skeleton {
-            width: 12rem;
-          }
-
-          .swiper_container {
-            padding-bottom: 3rem;
-          }
-        }
-
-        @keyframes skeleton-loading {
-          0% {
-            background-position: -200% 0;
-          }
-
-          100% {
-            background-position: 200% 0;
-          }
-        }
-      }
-    }
-
-    .advantage {
-      padding: 5rem 0;
-      text-align: center;
-      align-items: center;
-      margin: 5rem 0;
-
-      span {
-        font-size: 1.4rem;
-        color: #4f46e5;
-      }
-
-      .advantage_h1 {
-        font-size: 2.6rem;
-        font-family: "Poppins", sans-serif;
-        margin: 1.5rem auto;
-        max-width: 80rem;
-        text-align: center;
-        width: 100%;
-
-        strong {
-          display: block;
-        }
-      }
-
-      .advantage_text {
-        font-size: 1.4rem;
-        color: #888;
-        padding: 1rem 0;
-      }
-
-      @media (min-width: 768px) {
-        .advantage_h1 {
-          font-size: 3.5rem;
-        }
-
-        .advantage_text {
-          font-size: 1.6rem;
-        }
-
-        span {
-          font-size: 1.8rem;
-        }
-      }
-
-      @media (min-width: 1200px) {
-        .advantage_h1 {
-          font-size: 4rem;
-        }
-
-        .advantage_text {
-          font-size: 1.7rem;
-        }
-
-        span {
-          font-size: 1.7rem;
-        }
-      }
-
-      .advantage_wrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
-        gap: 1.5rem;
-        text-align: start;
-        padding: 0 1rem;
-
-        .advantage_box {
-          padding: 1.5rem;
-          border-radius: 1rem;
-          display: flex;
-          align-items: center;
-          gap: 1.5rem;
-
-          &:hover {
-            background: #f1fff0;
-          }
-
-          .advantage_box__flex {
-            width: 5rem;
-            display: flex;
-
-            svg {
-              width: 2rem;
-              margin: auto;
-              height: 2rem;
-            }
-          }
-
-          .advantage_box__right {
-            flex: 1 1 16rem;
-
-            h4 {
-              font-size: 1.6rem;
-            }
-
-            p {
-              font-size: 1.35rem;
-              color: #888;
-              line-height: 1.5;
-            }
-          }
-        }
-      }
-    }
-
-    //feedback
-    .feedbacks_user {
-      width: 100%;
-      overflow: hidden;
-      padding: 2rem 0;
-      margin-top: 5rem;
-
-      .feedbacksUser_h1 {
-        font-size: 2.6rem;
-        font-family: "Poppins", sans-serif;
-        margin: 1.5rem auto;
-        max-width: 80rem;
-        text-align: center;
-        width: 100%;
-
-        strong {
-          display: block;
-        }
-      }
-
-      .wrapper_feedback {
-        display: flex;
-        gap: 2rem;
-        animation: slide 15s linear infinite;
-      }
-
-      .box_feedback {
-        background: white;
-        border-radius: 1.6rem;
-        flex-shrink: 0;
-        transition: transform 0.3s ease;
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        padding: 1rem 0 0 0;
-        padding: 1.5rem;
-
-
-        &:hover {
-          transform: translateY(-.5rem);
-          cursor: pointer;
-        }
-
-        .customer_name {
-          font-weight: 600;
-          font-size: 1.5rem;
-          color: #333;
-          margin-bottom: 4px;
-        }
-
-        .template_name {
-          font-size: 1.3rem;
-          color: #888;
-          margin-bottom: 10px;
-          padding: 1rem 0 0 1rem;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-
-        .comment {
-          font-size: 1.4rem;
-          color: #555;
-          padding: 1rem 0 0 1rem;
-          line-height: 1.4;
-        }
-      }
-    }
-
-    @keyframes slide {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-
-    .faqSection {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      padding: 5rem 0 0 0;
-      margin: 5rem 0 0 0;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
 
-      .faqSection_flex {
-        flex: 1 1 32rem;
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
 
-        .faqSection_box {
-          .title {
-            font-size: 2.5rem;
-            margin: 1.5rem 0;
+        .waterLogo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 64px;
+          height: 64px;
+          color: #087de0;
+
+          svg {
+            width: 58px;
+            height: 58px;
+          }
+        }
+
+        .brandText {
+          h1 {
+            margin: 0;
+            color: #102a43;
+            font-size: 25px;
+            font-weight: 750;
+            line-height: 1.2;
+            letter-spacing: -0.4px;
           }
 
-          .text {
-            font-size: 1.4rem;
-            color: #555;
+          p {
+            margin: 5px 0 0;
+            color: #61758a;
+            font-size: 16px;
+            font-weight: 500;
           }
         }
       }
 
-      .faqSection_right {
-        flex: 1 1 32rem;
+      .connection {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 7px;
 
-        .faqSection_wrapper {
-          .faqSection_box__item {
-            padding: 1.5rem 1rem;
+        .online {
+          display: flex;
+          align-items: center;
+          gap: 9px;
+          color: #30475e;
+          font-size: 16px;
+          font-weight: 600;
 
-            &:hover {
-              background: #f1fff0;
-              border-radius: 1.5rem;
-              transition: 0.3s ease-in;
-            }
+          span {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #20ad6b;
+            box-shadow: 0 0 0 4px rgba(32, 173, 107, 0.1);
+          }
+        }
 
-            h4 {
-              font-size: 1.4rem;
-              margin: 1rem 0;
-              line-height: 1.5;
-            }
+        small {
+          color: #74879a;
+          font-size: 12px;
+        }
+      }
+    }
 
-            p {
-              font-size: 1.5rem;
-              line-height: 1.8;
-              color: #555;
+    .errorBox {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border: 1px solid #ffd6d6;
+      border-radius: 12px;
+      background: #fff5f5;
+      color: #d93025;
+      font-size: 14px;
+    }
+
+    .waterCard {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 290px;
+      min-height: 280px;
+      overflow: hidden;
+      border: 1px solid #f0dfb4;
+      border-radius: 18px;
+      background: #fffaf0;
+      box-shadow: 0 5px 18px rgba(30, 60, 90, 0.06);
+
+      &::after {
+        position: absolute;
+        right: -50px;
+        bottom: -80px;
+        left: -50px;
+        height: 115px;
+        border-radius: 50%;
+        background: rgba(255, 226, 146, 0.25);
+        content: "";
+      }
+
+      .waterMain {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+        padding: 38px 42px;
+
+        .tankWrapper {
+          flex-shrink: 0;
+
+          .tankCircle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            background: #fff3d1;
+
+            .tank {
               position: relative;
-              padding-left: 2rem;
+              width: 84px;
+              height: 92px;
+              overflow: hidden;
+              border: 5px solid #5687a7;
+              border-top: 0;
+              border-radius: 0 0 13px 13px;
+              background: rgba(255, 255, 255, 0.35);
+
+              &::before,
+              &::after {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                width: 5px;
+                background: #5687a7;
+                content: "";
+              }
 
               &::before {
-                content: "➤";
+                left: -5px;
+              }
+
+              &::after {
+                right: -5px;
+              }
+
+              .tankWater {
                 position: absolute;
+                right: 0;
+                bottom: 0;
                 left: 0;
-                top: 3px;
-                color: #4f46e5;
-                font-size: 1.2rem;
-                line-height: 1.8;
+                height: 69%;
+                background: #48a8ee;
+                box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.2);
+
+                span {
+                  position: absolute;
+                  top: -5px;
+                  width: 30px;
+                  height: 9px;
+                  border-radius: 50%;
+                  background: #48a8ee;
+
+                  &:nth-child(1) {
+                    left: 2px;
+                  }
+
+                  &:nth-child(2) {
+                    top: -3px;
+                    left: 25px;
+                  }
+
+                  &:nth-child(3) {
+                    top: -5px;
+                    right: 2px;
+                  }
+                }
+              }
+
+              .tankGlass {
+                position: absolute;
+                top: 8px;
+                right: 11px;
+                width: 10px;
+                height: 40px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.3);
               }
             }
+          }
+        }
+
+        .waterContent {
+          position: relative;
+          z-index: 1;
+
+          .label {
+            margin: 0;
+            color: #718397;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            text-transform: capitalize;
+          }
+
+          .waterValue {
+            display: flex;
+            align-items: baseline;
+            margin-top: 5px;
+            color: #082f63;
+            font-size: clamp(58px, 8vw, 6rem);
+            font-weight: 750;
+            line-height: 0.98;
+            letter-spacing: -4px;
+
+            span {
+              margin-left: 10px;
+              color: #153b61;
+              font-size: 2.2rem;
+              font-weight: 600;
+              letter-spacing: -1px;
+            }
+          }
+
+          .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 18px;
+            padding: .5rem 1rem;
+            border-radius: 999px;
+            font-size: 1.35rem;
+            font-weight: 700;
+
+            .statusIcon {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: .5rem 1rem;
+              border: 1.5px solid currentColor;
+              border-radius: 50%;
+              font-size: 13px;
+              font-weight: 800;
+            }
+          }
+
+          .statusGray {
+            color: #68798b;
+            background: #edf1f5;
+          }
+
+          .statusNormal {
+            color: #138a50;
+            background: #dff6e9;
+          }
+
+          .statusWarning {
+            color: #744e00;
+            background: #ffc83d;
+          }
+
+          .statusDanger {
+            color: #c92d48;
+            background: #ffe1e6;
+          }
+        }
+      }
+
+      .waterSide {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        padding: 30px 32px;
+        border-left: 1px solid #efdfbb;
+
+        .sideItem {
+          display: flex;
+          align-items: flex-start;
+          gap: 13px;
+
+          .sideIcon {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            width: 27px;
+            height: 27px;
+            color: #718397;
+
+            svg {
+              width: 25px;
+              height: 25px;
+            }
+          }
+
+          p {
+            margin: 0 0 5px;
+            color: #65798e;
+            font-size: 14px;
+          }
+
+          strong {
+            display: block;
+            color: #102a43;
+            font-size: 21px;
+            font-weight: 700;
+          }
+
+          small {
+            display: block;
+            margin-top: 4px;
+            color: #77899b;
+            font-size: 13px;
           }
         }
       }
     }
 
-    .controller_func {
-      position: fixed;
-      bottom: 10%;
-      left: 50%;
-      transform: translate(-50%, -10%);
-      background: #333;
-      border-radius: 2rem;
-      z-index: 999999 !important;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+
+      .infoCard {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 20px 28px;
+        border: 1px solid #e5ebf1;
+        border-radius: 2rem;
+        background: #fff;
+        box-shadow: 0 4px 15px rgba(37, 66, 94, 0.045);
+
+        .infoIcon {
+          display: flex;
+          flex-shrink: 0;
+          align-items: center;
+          justify-content: center;
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+
+          svg {
+            width: 35px;
+            height: 35px;
+          }
+        }
+
+        .blueIcon {
+          color: #1685cf;
+          background: #e2f4ff;
+        }
+
+        .purpleIcon {
+          color: #6534d6;
+          background: #f0e9ff;
+        }
+
+        .infoContent {
+          p {
+            margin: 0 0 5px;
+            color: #64778c;
+            font-size: 14px;
+          }
+
+          strong {
+            display: block;
+            color: #102a43;
+            font-size: 27px;
+            line-height: 1.15;
+            font-weight: 750;
+          }
+
+          small {
+            display: block;
+            margin-top: 4px;
+            color: #7d8e9f;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    .chartCard {
+      margin-top: 20px;
+      padding: 24px 26px 25px;
+      border: 1px solid #e5ebf1;
+      border-radius: 17px;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(37, 66, 94, 0.045);
+
+      .chartHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        margin-bottom: 23px;
+
+        .chartTitle {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+
+          .chartTitleIcon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            color: #137bc4;
+
+            svg {
+              width: 31px;
+              height: 31px;
+            }
+          }
+
+          h2 {
+            margin: 0;
+            color: #102a43;
+            font-size: 19px;
+            font-weight: 750;
+
+            span {
+              color: #66798c;
+              font-weight: 500;
+            }
+          }
+        }
+
+        .chartTabs {
+          display: flex;
+          align-items: center;
+          padding: 3px;
+          border-radius: 999px;
+          background: #f1f4f8;
+
+          button {
+            min-width: 76px;
+            padding: 9px 16px;
+            border: 0;
+            border-radius: 999px;
+            background: transparent;
+            color: #607387;
+            font-family: inherit;
+            font-size: 13px;
+            cursor: pointer;
+
+            &:hover {
+              color: #1a4e7c;
+            }
+          }
+
+          .activeTab {
+            color: #fff;
+            background: #087edb;
+            box-shadow: 0 2px 6px rgba(8, 126, 219, 0.2);
+          }
+        }
+      }
+
+      .chartArea {
+        position: relative;
+
+        .chartLabel {
+          margin-bottom: 5px;
+          color: #6e8092;
+          font-size: 13px;
+        }
+
+        .chartGraph {
+          display: flex;
+          height: 245px;
+
+          .yAxis {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 45px;
+            padding: 0 8px 0 0;
+            color: #617589;
+            font-size: 12px;
+            text-align: right;
+          }
+
+          .graphBody {
+            position: relative;
+            flex: 1;
+            overflow: hidden;
+            border-left: 1px solid #dbe3e9;
+            border-bottom: 1px solid #dbe3e9;
+
+            .zoneDanger {
+              position: absolute;
+              top: 0;
+              right: 0;
+              left: 0;
+              height: 33.33%;
+              background: rgba(255, 108, 120, 0.13);
+            }
+
+            .zoneWarning {
+              position: absolute;
+              top: 33.33%;
+              right: 0;
+              left: 0;
+              height: 25%;
+              background: rgba(255, 206, 75, 0.13);
+            }
+
+            .zoneNormal {
+              position: absolute;
+              top: 58.33%;
+              right: 0;
+              bottom: 0;
+              left: 0;
+              background: rgba(65, 204, 147, 0.1);
+            }
+
+            .horizontalGrid {
+              position: absolute;
+              inset: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+
+              span {
+                display: block;
+                width: 100%;
+                border-top: 1px solid rgba(142, 160, 176, 0.2);
+              }
+            }
+
+            .verticalGrid {
+              position: absolute;
+              inset: 0;
+              display: flex;
+              justify-content: space-between;
+
+              span {
+                height: 100%;
+                border-left: 1px solid rgba(142, 160, 176, 0.13);
+              }
+            }
+
+            .chartSvg {
+              position: absolute;
+              z-index: 2;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              color: #147bc5;
+              overflow: visible;
+            }
+
+            .chartTooltip {
+              position: absolute;
+              z-index: 4;
+              top: 7%;
+              right: -5px;
+              padding: 8px 13px;
+              border-radius: 9px;
+              background: #087edb;
+              color: #fff;
+              font-size: 13px;
+              font-weight: 700;
+              box-shadow: 0 4px 10px rgba(8, 126, 219, 0.22);
+
+              &::after {
+                position: absolute;
+                right: 9px;
+                bottom: -7px;
+                border-top: 8px solid #087edb;
+                border-right: 7px solid transparent;
+                border-left: 7px solid transparent;
+                content: "";
+              }
+            }
+          }
+        }
+
+        .xAxis {
+          display: flex;
+          justify-content: space-between;
+          padding: 9px 0 0 45px;
+          color: #65788b;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .thresholdCard {
+      margin-top: 20px;
+      padding: 20px 28px 23px;
+      border: 1px solid #e5ebf1;
+      border-radius: 17px;
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(37, 66, 94, 0.045);
+
+      .thresholdTitle {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+
+        .warningIcon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          clip-path: polygon(50% 0, 100% 90%, 0 90%);
+          background: #f6aa08;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 800;
+        }
+
+        h2 {
+          margin: 0;
+          color: #102a43;
+          font-size: 19px;
+          font-weight: 750;
+        }
+      }
+
+      .thresholdList {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 18px;
+
+        .threshold {
+          padding: 3px 30px;
+
+          &:not(:last-child) {
+            border-right: 1px solid #e4e8ed;
+          }
+
+          &:first-child {
+            padding-left: 0;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+
+          .thresholdName {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-size: 14px;
+            font-weight: 600;
+
+            .greenDot,
+            .yellowDot,
+            .redDot {
+              width: 13px;
+              height: 13px;
+              flex-shrink: 0;
+              border-radius: 50%;
+            }
+
+            .greenDot {
+              background: #20ad6b;
+            }
+
+            .yellowDot {
+              background: #f3a812;
+            }
+
+            .redDot {
+              background: #ed3d55;
+            }
+          }
+
+          &:nth-child(1) {
+            .thresholdName {
+              color: #21965f;
+            }
+          }
+
+          &:nth-child(2) {
+            .thresholdName {
+              color: #4d4d4d;
+            }
+          }
+
+          &:nth-child(3) {
+            .thresholdName {
+              color: #d83a50;
+            }
+          }
+
+          strong {
+            display: block;
+            margin-top: 8px;
+            color: #102a43;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .footer {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 22px;
+      padding-bottom: 15px;
+      color: #758697;
+      font-size: 12px;
+
+      span {
+        font-size: 20px;
+        line-height: 1;
+      }
+
+      i {
+        width: 1px;
+        height: 14px;
+        background: #b8c1ca;
+      }
     }
   }
-
-
 }
 
-@keyframes skeleton-loading {
-  0% {
-    background-position: -200% 0;
-  }
+/* =========================
+   RESPONSIVE
+========================= */
 
-  100% {
-    background-position: 200% 0;
+@media (max-width: 700px) {
+  .page {
+    padding: 16px 0 25px;
+
+    .container {
+      width: min(100% - 24px, 560px);
+
+      .header {
+        margin-bottom: 18px;
+
+        .brand {
+          gap: 10px;
+
+          .waterLogo {
+            width: 48px;
+            height: 48px;
+
+            svg {
+              width: 46px;
+              height: 46px;
+            }
+          }
+
+          .brandText {
+            h1 {
+              font-size: 19px;
+              letter-spacing: -0.3px;
+            }
+
+            p {
+              margin-top: 3px;
+              font-size: 13px;
+            }
+          }
+        }
+
+        .connection {
+          gap: 4px;
+
+          .online {
+            font-size: 13px;
+
+            span {
+              width: 8px;
+              height: 8px;
+            }
+          }
+
+          small {
+            font-size: 9px;
+          }
+        }
+      }
+
+      .waterCard {
+        display: block;
+        min-height: auto;
+        border-radius: 15px;
+
+        .waterMain {
+          gap: 17px;
+          padding: 27px 20px 22px;
+
+          .tankWrapper {
+            .tankCircle {
+              width: 91px;
+              height: 91px;
+
+              .tank {
+                width: 55px;
+                height: 61px;
+                border-width: 3px;
+
+                &::before,
+                &::after {
+                  width: 3px;
+                }
+
+                &::before {
+                  left: -3px;
+                }
+
+                &::after {
+                  right: -3px;
+                }
+              }
+            }
+          }
+
+          .waterContent {
+            .label {
+              font-size: 11px;
+            }
+
+            .waterValue {
+              font-size: 51px;
+              letter-spacing: -3px;
+
+              span {
+                margin-left: 5px;
+                font-size: 20px;
+              }
+            }
+
+            .status {
+              gap: 6px;
+              margin-top: 10px;
+              padding: 6px 11px;
+              font-size: 11px;
+
+              .statusIcon {
+                width: 5px;
+                height: 16px;
+                font-size: 10px;
+              }
+            }
+          }
+        }
+
+        .waterSide {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 12px;
+          padding: 14px 20px;
+          border-top: 1px solid #efdfbb;
+          border-left: 0;
+
+          .sideItem {
+            gap: 7px;
+
+            .sideIcon {
+              width: 20px;
+              height: 20px;
+
+              svg {
+                width: 18px;
+                height: 18px;
+              }
+            }
+
+            p {
+              margin-bottom: 3px;
+              font-size: 9px;
+            }
+
+            strong {
+              font-size: 13px;
+            }
+
+            small {
+              font-size: 9px;
+            }
+          }
+        }
+      }
+
+      .grid {
+        gap: 10px;
+        margin-top: 12px;
+
+        .infoCard {
+          min-height: 91px;
+          gap: 9px;
+          padding: 12px;
+          border-radius: 13px;
+
+          .infoIcon {
+            width: 48px;
+            height: 48px;
+
+            svg {
+              width: 27px;
+              height: 27px;
+            }
+          }
+
+          .infoContent {
+            p {
+              margin-bottom: 4px;
+              font-size: 9px;
+            }
+
+            strong {
+              font-size: 17px;
+            }
+
+            small {
+              margin-top: 2px;
+              font-size: 9px;
+            }
+          }
+        }
+      }
+
+      .chartCard {
+        margin-top: 12px;
+        padding: 15px 12px 14px;
+        border-radius: 13px;
+
+        .chartHeader {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 11px;
+          margin-bottom: 15px;
+
+          .chartTitle {
+            gap: 7px;
+
+            .chartTitleIcon {
+              width: 25px;
+              height: 25px;
+
+              svg {
+                width: 24px;
+                height: 24px;
+              }
+            }
+
+            h2 {
+              font-size: 14px;
+
+              span {
+                font-size: 13px;
+              }
+            }
+          }
+
+          .chartTabs {
+            align-self: flex-end;
+
+            button {
+              min-width: 61px;
+              padding: 7px 10px;
+              font-size: 10px;
+            }
+          }
+        }
+
+        .chartArea {
+          .chartGraph {
+            height: 160px;
+
+            .yAxis {
+              width: 31px;
+              padding-right: 5px;
+              font-size: 9px;
+            }
+          }
+
+          .chartLabel {
+            font-size: 10px;
+          }
+
+          .xAxis {
+            padding-left: 31px;
+            font-size: 8px;
+          }
+
+          .chartTooltip {
+            top: 8%;
+            padding: 6px 9px;
+            font-size: 9px;
+          }
+        }
+      }
+
+      .thresholdCard {
+        margin-top: 12px;
+        padding: 15px 12px;
+        border-radius: 13px;
+
+        .thresholdTitle {
+          gap: 8px;
+
+          .warningIcon {
+            width: 25px;
+            height: 25px;
+            font-size: 13px;
+          }
+
+          h2 {
+            font-size: 15px;
+          }
+        }
+
+        .thresholdList {
+          margin-top: 13px;
+
+          .threshold {
+            padding: 2px 9px;
+
+            .thresholdName {
+              gap: 5px;
+              font-size: 9px;
+
+              .greenDot,
+              .yellowDot,
+              .redDot {
+                width: 9px;
+                height: 9px;
+              }
+            }
+
+            strong {
+              margin-top: 6px;
+              font-size: 10px;
+            }
+          }
+        }
+      }
+
+      .footer {
+        gap: 7px;
+        margin-top: 12px;
+        font-size: 9px;
+
+        span {
+          font-size: 15px;
+        }
+
+        i {
+          height: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  .page {
+    .container {
+      .waterCard {
+        grid-template-columns: 1fr 240px;
+
+        .waterMain {
+          padding: 30px;
+        }
+
+        .waterSide {
+          padding: 25px;
+        }
+      }
+    }
   }
 }

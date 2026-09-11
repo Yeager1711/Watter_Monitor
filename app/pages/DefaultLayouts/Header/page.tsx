@@ -3,17 +3,15 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import classNames from 'classnames/bind';
-import styles from './header.module.scss'; // Giả sử stylesheet của Header được sử dụng
+import styles from './header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faChevronLeft, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import LoginPopup from '../../../v2/login/Login';
 import SignUpPopup from '../../../v2/signup/SignUp';
 import { useApi } from 'app/lib/apiContext/apiContext';
 
-// Kết hợp styles của cả Header và UserPopup
 const cx = classNames.bind(styles);
 
-// Định nghĩa interface cho UserProfile
 interface UserProfile {
     user_id: number;
     full_name: string;
@@ -26,14 +24,12 @@ interface UserProfile {
     };
 }
 
-// Định nghĩa interface cho UserPopupProps
 interface UserPopupProps {
     isOpen: boolean;
     onClose: () => void;
     onLogout: () => void;
 }
 
-// Component UserPopup
 const UserPopup: React.FC<UserPopupProps> = ({ isOpen, onClose, onLogout }) => {
     const popupRef = useRef<HTMLDivElement>(null);
     const { getUserProfile } = useApi();
@@ -132,10 +128,12 @@ const UserPopup: React.FC<UserPopupProps> = ({ isOpen, onClose, onLogout }) => {
     );
 };
 
-// Component Header
 const navItems = [
     { name: 'Trang chủ', path: '/' },
-    { name: 'Hướng dẫn', path: '/instruct' },
+    { name: 'Về chúng tôi', path: '/aboutUs' },
+    { name: 'Dịch vụ', path: '/service' },
+    { name: 'Bài viết', path: '/blogs' },
+    { name: 'Liên Hệ', path: '/contract' },
 ];
 
 function Header() {
@@ -199,8 +197,6 @@ function Header() {
         isInitialLogin.current = true;
     };
 
-    const displayedNavItem = pathname === '/' ? navItems[1] : navItems[0];
-
     return (
         <aside
             className={cx('sidebar', {
@@ -209,7 +205,7 @@ function Header() {
         >
             <div className={styles.margin}>
                 <div className={cx('logo', { 'logo-hidden': isNavBoxOpen })}>
-                    <img src="/images/logo.png" alt="" />
+                    Do <strong>Ca</strong>
                 </div>
                 <div className={cx('nav-container')}>
                     <div className={cx('user-container')}>
@@ -223,7 +219,6 @@ function Header() {
                                         key={item.name}
                                         className={cx({
                                             active: pathname === item.path,
-                                            'nav-hidden': item.path !== displayedNavItem.path,
                                         })}
                                     >
                                         <Link href={item.path}>{item.name}</Link>

@@ -9,8 +9,7 @@
   justify-content: center;
   align-items: center;
   z-index: 9999999 !important;
-  -webkit-backdrop-filter: blur(1rem);
-          backdrop-filter: blur(1rem);
+  backdrop-filter: blur(1rem);
 }
 .loginPopupOverlay .loginPopupContainer {
   width: 95%;
