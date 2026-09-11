@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 7777/Watter_Monitor",
+    "dev": "next dev -p 7777",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -21,7 +21,6 @@
     "aos": "^2.3.4",
     "axios": "^1.7.7",
     "browser-image-compression": "^2.0.2",
-    "canvas": "^3.1.0",
     "chart.js": "^4.4.6",
     "cheerio": "^1.0.0",
     "classnames": "^2.5.1",
